@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "El Messiri", sans-serif;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbmNlcnR8ZW58MHx8MHx8&w=1000&q=80");
+  /*background-color: black;*/
+}
+
+.fas {
+  width: 32px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.box {
+  position: relative;
+}
+.box .square {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  animation: square 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes square {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+.container {
+  position: relative;
+  padding: 50px;
+  width: 1500px;
+  min-height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  margin: 15px auto;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%);
+}
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.form h2 {
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.form .inputBx {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  
+}
+.form .inputBx input {
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(0, 0, 0);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.form .inputBx input[type=submit] {
+  background: #fff;
+  color: #111;
+  max-width: 100px;
+  padding: 8px 10px;
+  box-shadow: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 1.5s;
+}
+.form .inputBx input[type=submit]:hover {
+  background: linear-gradient(115deg, rgb(0, 0, 0), rgb(0, 0, 0));
+  color: #fff;
+  transition: 0.5s;
+}
+.form .inputBx input::placeholder {
+  color: #fff;
+}
+.form .inputBx span {
+  position: absolute;
+  left: 30px;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.form .inputBx input:focus ~ span,
+.form .inputBx input:valid ~ span {
+  transform: translateX(-30px) translateY(-25px);
+  font-size: 12px;
+}
+radio-container {
+  position: relative;
+  height: 4em;
+}
+.radio-container{
+  padding-bottom: 20px; 
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0);
+  color: #fff;
+  width: 80%;
+}
+.radio-container:hover {
+  position: relative;
+  z-index: 9999;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0);  
+  color: #fff;
+
+}
+.radio-options {
+  position: relative;
+  max-height: 3em;
+  width: 100%;
+  overflow: hidden; 
+  
+}
+.radio-options:hover {
+  max-height: 100em; 
+  
+}
+.radio-options .toggle {
+  position: relative;
+  cursor: pointer;
+  padding: 0.75em;
+  padding-left: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(26, 26, 26);
+  border-radius: 10px;
+  z-index: 1; 
+  
+}
+/* li are stacked at the same position as .toggle, only .toggle is visible */
+.radio-options li:hover {
+  position: relative;
+  top: 0;
+  left: 0;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(26, 26, 26);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+}
+.radio-options label {
+  display: block;
+  opacity: 0;
+  transition: 0s; 
+  
+} 
+.radio-options input {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3em;
+  opacity: 0;
+  z-index:1;
+  cursor: pointer; 
+  padding-left: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(26, 26, 26);
+  padding: 8px 10px;
+  border-radius: 15px;
+}
+/* li elements have a normal flow within the .radio-options container */
+.radio-options:hover li {
+  position: relative; 
+  padding-left: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgb(26, 26, 26);
+  padding: 8px 10px;
+  border-radius: 15px;
+}
+.radio-options:hover label {
+  opacity: 1;
+  transition: 0.5s; 
+}
+.radio-options input:checked ~ label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+/* is above the .toggle so is visible */
+  z-index: 2;
+/* has tha same styles as .toggle */
+  padding: 0.75em;
+  padding-left: 40px;
+  background: rgb(26, 26, 26);
+  border-radius: 15px;
+}
+.radio-options:hover input:checked ~ label {
+  position: static;
+  border-radius: 0; 
+
+}
+.radio-options .checked label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75em;
+  padding-left: 40px;
+  background: rgb(26, 26, 26);
+  border-radius: 15px;
+  visibility: visible;
+  z-index: 2; 
+}
+/*
+.form .dropdown {
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+select{
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.form .dropdown select option {
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.form .dropdown select option:hover {
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  padding-left: 40px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}*/
+.form p {
+  color: #fff;
+  font-size: 15px;
+  margin-top: 5px;
+}
+.form p a {
+  color: #fff;
+}
